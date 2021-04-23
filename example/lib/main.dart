@@ -77,7 +77,6 @@ class _MyHomePageState extends State<MyHomePage> {
                       FooException: Text('FooException handled'),
                       BarException: Text('BarException handled'),
                     },
-
                   );
                 }
 
