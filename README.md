@@ -2,13 +2,23 @@
 
 Flutter package that allows to deal with different widgets mapped by exception
 
-## Getting Started
+## Features
 
-This project is a starting point for a Dart
-[package](https://flutter.dev/developing-packages/),
-a library module containing code that can be shared easily across
-multiple Flutter or Dart projects.
+### ExceptionWidget
 
-For help getting started with Flutter, view our 
-[online documentation](https://flutter.dev/docs), which offers tutorials, 
-samples, guidance on mobile development, and a full API reference.
+This widget can be used in that situations where you need to handle multiple exception and return a specific view for each one (eg when dealing with a Future result).
+You only have to pass the exception you need to deal with and a map of Type: Widget to define which widget to return when error is of that type.
+
+If the current error is not mapped a `Container` will be returned.
+
+```dart
+ExceptionWidget(
+  error: snapshot.error,
+  errorMap: {
+    FooException: Text('FooException handled'),
+    BarException: Text('BarException handled'),
+  },
+)
+```
+
+This way you don't need to manually check the exception type to return the desired view

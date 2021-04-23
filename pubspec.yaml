@@ -1,6 +1,6 @@
 name: exception_widget
 description: Flutter package that allows to deal with different widgets mapped by exception
-version: 0.0.1
+version: 0.1.0
 repository: https://github.com/dariof28/exception_widget
 
 environment:
