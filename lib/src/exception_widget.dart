@@ -9,12 +9,10 @@ class ExceptionWidget extends StatelessWidget {
   /// A map of Exception type and the corresponding widget that should be returned
   final Map<Type, Widget> errorMap;
 
-  ExceptionWidget({@required this.error, @required this.errorMap})
-      : assert(error != null),
-        assert(errorMap != null);
+  ExceptionWidget({required this.error, required this.errorMap});
 
   @override
   Widget build(BuildContext context) => errorMap.containsKey(error.runtimeType)
-      ? errorMap[error.runtimeType]
+      ? errorMap[error.runtimeType]!
       : Container();
 }
