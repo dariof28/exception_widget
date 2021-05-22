@@ -21,21 +21,21 @@ class MyApp extends StatelessWidget {
 }
 
 class MyHomePage extends StatefulWidget {
-  MyHomePage({Key key, this.title}) : super(key: key);
+  MyHomePage({Key? key, this.title}) : super(key: key);
 
-  final String title;
+  final String? title;
 
   @override
   _MyHomePageState createState() => _MyHomePageState();
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  Future _future;
+  Future? _future;
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text(widget.title)),
+      appBar: AppBar(title: Text(widget.title!)),
       body: Center(
         child: Column(
           children: [
@@ -72,7 +72,7 @@ class _MyHomePageState extends State<MyHomePage> {
               builder: (context, snapshot) {
                 if (snapshot.hasError) {
                   return ExceptionWidget(
-                    error: snapshot.error,
+                    error: snapshot.error as Exception,
                     errorMap: {
                       FooException: Text('FooException handled'),
                       BarException: Text('BarException handled'),
